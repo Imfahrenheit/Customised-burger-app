@@ -1,15 +1,17 @@
 .Modal {
     position: fixed;
     z-index: 500;
-    background-color: white;
+    background-color: rgba(231, 173, 39, 0.812);
+    color: white;
     width: 70%;
-    border: 1px solid #ccc;
+    border: 2px solid rgba(185, 8, 8, 0.531);
+    border-radius: 5px;
     box-shadow: 1px 1px 1px black;
     padding: 16px;
     left: 15%;
     top: 30%;
     box-sizing: border-box;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-out;
 }
 
 @media (min-width: 600px) {

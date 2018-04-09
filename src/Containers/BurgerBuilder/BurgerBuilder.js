@@ -4,6 +4,7 @@ import Burger from "../../components/Burger/Burger";
 import Controls from '../../components/Burger/Controls/Controls'
 import Modal from '../../components/UI/Modal/Modal'
 import OrderSummery from '../../components/UI/OrderSummery/OrderSummery'
+import swal from 'sweetalert2'
 
 
 const IGR_PRICE={
@@ -67,12 +68,43 @@ orderHandler = ()=>{
 this.setState({purchasing: true})
 }
   purchaseCancelled = () => {
+    this.modalCancel()
     this.setState({ purchasing: false })
   };
-  
+  modalContinue = () => {
+    swal({
+      position: 'center', type: 'success', title: 'Your order has been sent', showConfirmButton: false,
+      timer: 1500
+    })
+  }
+ 
+  modalCancel = ()=>{
+    swal({
+    title: 'Are you sure?',
+    text: "You won't be able to revert this!",
+    type: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes!',
+      cancelButtonText: 'No'
+  }).then((result) => {
+    if (result.value) {
+      swal({
+        title:'Cancelled!',
+        text:'Your order has been cancelled.',
+        type:'success',
+        showConfirmButton:false ,
+        timer: 1000
+      })
+    }
+  })
+ };
+
 orderContinue = ()=>{
-alert('You continue to checkout')
-  this.purchaseCancelled();
+  
+  this.purchaseCancelled()
+  this.modalContinue();
 }
 
 
@@ -80,6 +112,8 @@ alert('You continue to checkout')
 
 
   render() {
+
+
  let disAbleInfo= 
 {
    ...this.state.ingredients

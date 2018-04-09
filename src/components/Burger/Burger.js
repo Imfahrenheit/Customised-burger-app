@@ -16,7 +16,7 @@ let newIngredients = Object.keys(props.ingredients)
   },[]);
 
 if(newIngredients.length===0){
-  newIngredients ='Please start adding indrediants!'
+  newIngredients ='Please start adding ingrediants!'
 }
 
 

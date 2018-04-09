@@ -11,7 +11,7 @@
     padding: 5px;
     margin: 0 5px;
     width: 80px;
-    border: 1px solid #AA6817;
+    border: 1px solid rgb(236, 106, 25);
     cursor: pointer;
     outline: none;
 }
@@ -36,12 +36,12 @@
 }
 
 .Control .Less {
-    background-color: #D39952;
+    background-color: rgb(236, 106, 25);;
     color: white;
 }
 
 .Control .More {
-    background-color: #8F5E1E;
+    background-color: rgb(19, 112, 167);
     color: white;
 }
 
