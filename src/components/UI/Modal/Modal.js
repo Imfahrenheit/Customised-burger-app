@@ -6,20 +6,18 @@ import BackDrop from './Backdrop/BackDrop.js'
 
 
 const modal = props => {
-  return (    <Aux>
+  return props.show? (    <Aux>
 
                 <BackDrop show={props.show} clicked={props.modalClosed}
                 />
 
 
-                  <div className = {styles.Modal}
-                        style={{
-                            transform: props.show ? 'translateY(0)' : 'translateY(-100vh)',
-                            opacity: props.show ? '1' :'0'}}>
+                  <div className = {`${styles.Modal} animated slideInUp`}>
+                       
                 {props.children}
                   </div>
                 
                 </Aux>
-  )
+  ):null
 }
 export default modal;
